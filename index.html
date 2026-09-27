@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MD RASEL HOSSEN — personal portfolio and contact profile">
+<title>MD RASEL HOSSEN | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-height:100vh; font-family:Inter,Arial,sans-serif; color:#fff;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(124,92,255,.23),transparent 28%),
+    radial-gradient(circle at 85% 80%,rgba(0,229,255,.18),transparent 28%),
+    linear-gradient(135deg,#080817,#17102d 48%,#07131f);
+  overflow-x:hidden;
+}
+.bg-orb{position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(75px);opacity:.3;pointer-events:none;animation:drift 11s ease-in-out infinite alternate}
+.one{left:-110px;top:8%;background:#7c5cff}.two{right:-110px;bottom:7%;background:#00e5ff;animation-delay:-4s}
+@keyframes drift{to{transform:translate(65px,-35px) scale(1.2)}}
+
+.page{width:min(720px,calc(100% - 18px));margin:auto;padding:18px 0 30px;position:relative;z-index:2}
+.card{
+ position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:30px;
+ padding:32px 24px 24px;background:rgba(255,255,255,.085);backdrop-filter:blur(18px);
+ -webkit-backdrop-filter:blur(18px);box-shadow:0 25px 80px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.1)
+}
+.profile{text-align:center}
+.avatar-wrap{
+ width:150px;height:150px;margin:0 auto 19px;padding:5px;border-radius:50%;
+ background:conic-gradient(#8a6cff,#00e5ff,#ff4fd8,#8a6cff);box-shadow:0 0 35px rgba(0,229,255,.22);
+}
+.avatar{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;border:5px solid #111022}
+h1{font-size:clamp(30px,7vw,45px);margin:5px 0 7px;letter-spacing:-.8px}
+.profession{color:#aeefff;font-size:17px;font-weight:800;margin:0}
+.bio{max-width:570px;margin:15px auto 23px;line-height:1.7;color:rgba(255,255,255,.76);font-size:15px}
+
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.info{padding:16px;border-radius:18px;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.1)}
+.info small{display:block;color:rgba(255,255,255,.52);margin-bottom:6px}
+.info a{color:#fff;text-decoration:none;word-break:break-word}
+.info a:hover{color:#8fefff}
+
+.contact-btn{
+ width:100%;border:0;border-radius:17px;padding:16px 20px;margin-top:15px;color:#fff;
+ font-size:16px;font-weight:800;cursor:pointer;background:linear-gradient(135deg,#765cff,#00aeda);
+ box-shadow:0 12px 30px rgba(0,174,218,.17)
+}
+.contact-btn:hover{filter:brightness(1.08);transform:translateY(-2px)}
+
+.stats{display:flex;justify-content:center;gap:12px;margin:20px 0 6px}
+.stat{min-width:170px;text-align:center;padding:12px 18px;border-radius:17px;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.1)}
+.stat .num{font-size:22px;font-weight:800;color:#aeefff}
+.stat small{color:rgba(255,255,255,.55)}
+
+.divider{height:1px;margin:23px 0 18px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent)}
+.social-title{text-align:center;color:rgba(255,255,255,.55);font-size:13px;margin-bottom:12px}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:11px}
+.social{
+ width:49px;height:49px;display:grid;place-items:center;border-radius:15px;color:#fff;text-decoration:none;
+ border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);
+ transition:.22s;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)
+}
+.social:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 12px 24px rgba(0,0,0,.3)}
+.facebook:hover{background:#1877f2}.instagram:hover{background:linear-gradient(45deg,#feda75,#d62976,#4f5bd5)}
+.youtube:hover{background:#ff0000}.github:hover{background:#24292f}.linkedin:hover{background:#0a66c2}
+.telegram:hover{background:#229ed9}.whatsapp:hover{background:#25d366}
+
+footer{text-align:center;margin-top:21px;color:rgba(255,255,255,.5);font-size:13px;line-height:1.7}
+footer strong{color:rgba(255,255,255,.84)}
+
+/* Floating note button */
+.note-fab{
+ position:fixed;right:18px;bottom:18px;z-index:20;border:0;border-radius:18px;padding:13px 16px;
+ color:#fff;background:linear-gradient(135deg,#ff4fd8,#765cff);font-weight:800;cursor:pointer;
+ box-shadow:0 12px 30px rgba(118,92,255,.35)
+}
+.note-fab span{display:block;font-size:11px;font-weight:500;opacity:.78;margin-top:2px}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(3,3,15,.7);backdrop-filter:blur(9px)}
+.modal.open{display:flex}
+.modal-box{width:min(510px,100%);padding:23px;border-radius:25px;background:#17152d;border:1px solid rgba(255,255,255,.15);box-shadow:0 25px 80px #0008}
+.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.modal-head h2{margin:0;font-size:22px}.close{background:none;border:0;color:#aaa;font-size:24px;cursor:pointer}
+.field{margin-top:13px}
+.field label{display:block;font-size:13px;color:#aaa;margin-bottom:7px}
+.field input,.field textarea{
+ width:100%;border:1px solid rgba(255,255,255,.13);outline:none;border-radius:13px;padding:13px 14px;
+ background:rgba(255,255,255,.07);color:#fff;font:inherit
+}
+.field textarea{min-height:125px;resize:vertical}
+.send{width:100%;margin-top:14px;padding:14px;border:0;border-radius:14px;background:linear-gradient(135deg,#765cff,#00aeda);color:#fff;font-weight:800;cursor:pointer}
+.status{min-height:20px;margin-top:9px;font-size:13px;color:#aeefff;text-align:center}
+
+/* Tap effects */
+.bubble{position:fixed;width:10px;height:10px;border-radius:50%;pointer-events:none;z-index:99;border:1px solid #fff8;animation:bubble .9s ease-out forwards}
+@keyframes bubble{to{transform:translate(var(--dx),var(--dy)) scale(3.5);opacity:0}}
+.drop{position:fixed;top:-30px;width:2px;height:22px;border-radius:10px;background:#78e6ff99;pointer-events:none;z-index:98;animation:rain .9s linear forwards}
+@keyframes rain{to{transform:translateY(110vh);opacity:0}}
+
+@media(max-width:520px){
+ .card{padding:28px 16px 20px}.avatar-wrap{width:128px;height:128px}
+ .info-grid{grid-template-columns:1fr}.stats{gap:8px}.stat{min-width:0;flex:1}
+ .note-fab{right:12px;bottom:12px}
+}
+</style>
+</head>
+<body>
+<div class="bg-orb one"></div><div class="bg-orb two"></div>
+
+<main class="page">
+<section class="card">
+  <div class="profile">
+    <div class="avatar-wrap"><img class="avatar" src="profile.jpg" alt="MD RASEL HOSSEN"></div>
+
+    <h1>MD RASEL HOSSEN</h1>
+    <p class="profession">Student • Entrepreneur • Digital Creator</p>
+
+    <p class="bio">
+      Welcome to my personal profile. I am interested in business, technology,
+      digital projects and continuous learning.
+    </p>
+  </div>
+
+  <!-- INTRODUCTION-এর নিচে: Profession / Location / Email / Website -->
+  <div class="info-grid">
+    <div class="info"><small>💼 Profession</small>Student / Entrepreneur</div>
+    <div class="info"><small>📍 Location</small>Bangladesh</div>
+    <div class="info"><small>📧 Email</small><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></div>
+    <div class="info"><small>🌐 Website</small><a href="#" target="_blank">My Website</a></div>
+  </div>
+
+  <button class="contact-btn" onclick="openNote()">💌 Send me a message</button>
+
+  <!-- Visitor counter -->
+  <div class="stats">
+    <div class="stat">
+      <div class="num" id="visitorCount">—</div>
+      <small>👀 Visitors</small>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Social media সবার নিচে -->
+  <div class="social-title">✨ Find me on social media</div>
+  <div class="socials">
+    <a class="social facebook" href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a class="social instagram" href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a class="social youtube" href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <a class="social github" href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a class="social linkedin" href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a class="social telegram" href="#" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+    <a class="social whatsapp" href="#" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+
+  <footer>
+    Developed with ❤️ by <strong>MD RASEL HOSSEN</strong><br>
+    © <span id="year"></span> All Rights Reserved
+  </footer>
+</section>
+</main>
+
+<!-- Floating message button -->
+<button class="note-fab" onclick="openNote()">📝 Drop a Note<span>Important message?</span></button>
+
+<!-- On-site message modal: visitor never leaves the page -->
+<div class="modal" id="noteModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>💌 Drop a Note</h2>
+      <button class="close" onclick="closeNote()" aria-label="Close">×</button>
+    </div>
+
+    <div class="field">
+      <label>Your name</label>
+      <input id="senderName" type="text" maxlength="80" placeholder="Enter your name">
+    </div>
+
+    <div class="field">
+      <label>Your email</label>
+      <input id="senderEmail" type="email" maxlength="120" placeholder="you@example.com">
+    </div>
+
+    <div class="field">
+      <label>Important message</label>
+      <textarea id="senderMessage" maxlength="1000" placeholder="Write your message here..."></textarea>
+    </div>
+
+    <button class="send" id="sendBtn" onclick="sendMessage()">🚀 Send Message</button>
+    <div class="status" id="messageStatus"></div>
+  </div>
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/*
+  IMPORTANT:
+  For a real shared visitor counter + real message inbox, configure Supabase below.
+  Create a project at supabase.com, then put your Project URL and anon key here.
+*/
+const SUPABASE_URL = "YOUR_SUPABASE_URL";
+const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+
+async function supabaseFetch(path, options={}) {
+  return fetch(SUPABASE_URL + path, {
+    ...options,
+    headers: {
+      "apikey": SUPABASE_ANON_KEY,
+      "Authorization": "Bearer " + SUPABASE_ANON_KEY,
+      "Content-Type": "application/json",
+      ...(options.headers || {})
+    }
+  });
+}
+
+async function loadVisitors() {
+  const el = document.getElementById("visitorCount");
+
+  // Demo fallback until Supabase is configured
+  if (SUPABASE_URL.startsWith("YOUR_")) {
+    const key = "rasel_demo_visits";
+    const current = Number(localStorage.getItem(key) || 0) + 1;
+    localStorage.setItem(key, current);
+    el.textContent = current.toLocaleString();
+    return;
+  }
+
+  try {
+    const r = await supabaseFetch("/rest/v1/site_stats?id=eq.1&select=visitors");
+    const rows = await r.json();
+    el.textContent = Number(rows?.[0]?.visitors || 0).toLocaleString();
+  } catch {
+    el.textContent = "—";
+  }
+}
+
+async function registerVisit() {
+  if (SUPABASE_URL.startsWith("YOUR_")) return;
+
+  try {
+    // Requires an RPC function named increment_visitors() in Supabase.
+    await supabaseFetch("/rest/v1/rpc/increment_visitors", {
+      method: "POST",
+      body: "{}"
+    });
+    loadVisitors();
+  } catch {}
+}
+
+function openNote() {
+  document.getElementById("noteModal").classList.add("open");
+  setTimeout(() => document.getElementById("senderName").focus(), 100);
+}
+function closeNote() {
+  document.getElementById("noteModal").classList.remove("open");
+}
+document.getElementById("noteModal").addEventListener("click", e => {
+  if (e.target.id === "noteModal") closeNote();
+});
+
+async function sendMessage() {
+  const name = document.getElementById("senderName").value.trim();
+  const email = document.getElementById("senderEmail").value.trim();
+  const message = document.getElementById("senderMessage").value.trim();
+  const status = document.getElementById("messageStatus");
+  const btn = document.getElementById("sendBtn");
+
+  if (!name || !email || !message) {
+    status.textContent = "Please complete all fields.";
+    return;
+  }
+
+  btn.disabled = true;
+  status.textContent = "Sending…";
+
+  if (SUPABASE_URL.startsWith("YOUR_")) {
+    // Local demo only; no external navigation.
+    setTimeout(() => {
+      status.textContent = "✅ Demo message received. Configure Supabase to store real messages.";
+      btn.disabled = false;
+    }, 650);
+    return;
+  }
+
+  try {
+    const r = await supabaseFetch("/rest/v1/messages", {
+      method: "POST",
+      headers: {"Prefer": "return=minimal"},
+      body: JSON.stringify({name, email, message})
+    });
+
+    if (!r.ok) throw new Error();
+    status.textContent = "✅ Message sent successfully!";
+    document.getElementById("senderMessage").value = "";
+  } catch {
+    status.textContent = "❌ Could not send. Please try again.";
+  }
+  btn.disabled = false;
+}
+
+loadVisitors().then(registerVisit);
+
+// Tap = bubbles
+document.addEventListener("pointerdown", e => {
+  if (e.target.closest("a,button,input,textarea")) return;
+  const colors = ["#7c5cff","#00e5ff","#ff4fd8","#ffcf4a","#62ff9a"];
+  for(let i=0;i<9;i++){
+    const b=document.createElement("span");
+    b.className="bubble";
+    b.style.left=e.clientX+"px"; b.style.top=e.clientY+"px";
+    b.style.background=colors[Math.floor(Math.random()*colors.length)];
+    b.style.setProperty("--dx",(Math.random()*180-90)+"px");
+    b.style.setProperty("--dy",(Math.random()*180-90)+"px");
+    document.body.appendChild(b);
+    setTimeout(()=>b.remove(),950);
+  }
+});
+
+// Double tap = rain
+let lastTap=0;
+document.addEventListener("pointerdown", e => {
+  const now=Date.now();
+  if(now-lastTap<320){
+    for(let i=0;i<28;i++){
+      const d=document.createElement("span"); d.className="drop";
+      d.style.left=Math.random()*innerWidth+"px";
+      d.style.animationDelay=Math.random()*350+"ms";
+      document.body.appendChild(d); setTimeout(()=>d.remove(),1400);
+    }
+  }
+  lastTap=now;
+});
+</script>
+</body>
+</html>
